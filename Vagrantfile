@@ -53,6 +53,11 @@ Vagrant.configure(2) do |config|
   #
   # View the documentation for the provider you are using for more
   # information on available options.
+  
+  config.vm.provision "shell" do |s|
+    s.path = "/vagrant/provision.sh"
+    s.upload_path = "/vagrant/provision.sh"
+  end
 
   # Define a Vagrant Push strategy for pushing to Atlas. Other push strategies
   # such as FTP and Heroku are also available. See the documentation at
